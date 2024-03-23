@@ -50,6 +50,27 @@
     </div>
   </div>
 
+  <div id="secondContent"
+    class="container my-4 p-5 bg-white rounded-3 shadow-sm border-0"
+    x-data="{ maxLength: 100 }">
+
+    <div class="my-3">
+      <label for="enter"
+        class="form-label">Enter Your Description</label>
+
+      <textarea name="description"
+        id="description"
+        cols="30"
+        rows="2"
+        class="form-control text-muted"
+        x-ref="description"
+        @keyup="maxLength = 100 - $refs.description.value.length"></textarea>
+
+      <span class="form-text"
+        x-text="maxLength + ' Characters remaining'"></span>
+    </div>
+  </div>
+
 </body>
 
 </html>
