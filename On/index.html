@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+  <title>On - Alpine.js Training</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous" />
+
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="antialiased bg-light">
+  <main>
+    <div class="container my-5">
+      <h1>Directive Name : On</h1>
+      <span>Link : <a href="https://alpinejs.dev/directives/on"
+          target="_blank">Alpine.js Documentation</a>
+      </span>
+    </div>
+  </main>
+
+  <div id="content"
+    class="container my-4 p-5 bg-white rounded-3 shadow-sm border-0"
+    x-data="{ data: false }">
+
+    <p class="m-0 text-muted fst-italic">
+      <code class="badge bg-dark">x-on</code> Directive merupakan fungsi yang sama dengan Event Listener. Bila kita nak
+      triggered something, kita boleh gunakan directive ni. Kita juga boleh pendekkan syntax directive ini dengan
+      menggunakan @ dan combine dengan JS native events. Contohnya <code class="badge bg-dark">@click</code> atau <code
+        class="badge bg-dark">@keyup</code>
+    </p>
+
+    <hr class="my-4" />
+
+    <button class="btn btn-sm btn-primary"
+      @click="alert('Warning. Security Breach!')">Tekan sini
+    </button>
+
+    <button class="btn btn-sm btn-primary"
+      @click="askName">Enter name
+    </button>
+
+    <script>
+      let askName = () => {
+        let name = prompt('What is Your name?');
+        alert(`Oh hye there, ${name}`);
+      }
+
+    </script>
+  </div>
+</body>
+
+</html>
