@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200 mt-5">
+    <div class="flex justify-center">
+        <div x-data="{ dropDown: false }" @keydown.escape.prevent.stop="dropDown = false" x-id=" ['dropdown-button']">
+
+            <button type="button" class="border border-black bg-white px-8 py-3" @click="dropDown = !dropDown"
+                :aria-expanded="dropDown" :aria-control="$id('dropdown-button')">
+                Click to see
+            </button>
+
+            <div style="display: none;" x-show="dropDown" @click.outside="dropDown = false"
+                :id="$id('dropdown-button')">
+                <div class="border border-black bg-white mt-3 text-center p-2">
+                    <p class="text-[12px]">Assalamualaikum</p>
+                </div>
+
+                <div class="border border-black bg-white mt-1 text-center p-2">
+                    <p class="text-[12px]">Hello World</p>
+                </div>
+
+                <div class="border border-black bg-white mt-1 text-center p-2">
+                    <p class="text-[12px]">Hello Internet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
